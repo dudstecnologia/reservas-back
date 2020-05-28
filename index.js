@@ -6,7 +6,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.send('Sistema de Reservas')
 })
 
@@ -22,8 +22,9 @@ app.get('/', function(req, res) {
   // User.create({ name: 'Admin', email: 'admin@email.com', password: 'admin', profile_id: profile[0].id })
 // })
 
+require('./app/routes/auth.routes')(app)
 require('./app/routes/profile.routes')(app)
 
-app.listen(3000, function() {
+app.listen(3000, () => {
   console.log('Servidor iniciado na porta 3000')
 })

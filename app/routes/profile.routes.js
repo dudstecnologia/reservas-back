@@ -1,5 +1,7 @@
-module.exports = app => {
-    const profiles = require("../controllers/profile.controller");
+const verifyAuth = require('./index')
 
-    app.get("/profiles", profiles.findAll)
+module.exports = app => {
+    const profiles = require("../controllers/profile.controller")
+
+    app.get("/profiles", verifyAuth, profiles.findAll)
 }
