@@ -7,7 +7,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', function(req, res) {
-  res.send('Olá mundo')
+  res.send('Sistema de Reservas')
 })
 
 // const { Profile, User } = require('./app/models')
@@ -18,9 +18,11 @@ app.get('/', function(req, res) {
 // })
 
 // Profile.findAll({ where: { name: 'administrador' } }).then((profile) => {
-//   console.log(profile)
-//   User.create({ name: 'Admin', email: 'admin@email.com', password: 'admin', profile_id: profile[0].id })
+  // console.log(profile)
+  // User.create({ name: 'Admin', email: 'admin@email.com', password: 'admin', profile_id: profile[0].id })
 // })
+
+require('./app/routes/profile.routes')(app)
 
 app.listen(3000, function() {
   console.log('Servidor iniciado na porta 3000')
