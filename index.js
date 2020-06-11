@@ -17,14 +17,14 @@ app.get('/', (req, res) => {
 //   console.log(JSON.stringify(profile))
 // })
 
-// Profile.findAll({ where: { name: 'administrador' } }).then((profile) => {
-  // console.log(profile)
+// Profile.findOne({ where: { name: 'administrador' } }).then((profile) => {
+//   console.log(profile)
   // User.create({ name: 'Admin', email: 'admin@email.com', password: 'admin', profile_id: profile[0].id })
 // })
 
 require('./app/routes/auth.routes')(app)
 require('./app/routes/profile.routes')(app)
 
-app.listen(3000, () => {
-  console.log('Servidor iniciado na porta 3000')
+app.listen(3030, () => {
+  console.log('Servidor iniciado na porta 3030')
 })

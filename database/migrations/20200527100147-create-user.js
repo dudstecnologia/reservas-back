@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.UUID,
         references: {
           model: {
-            tableName: 'profiles'
+            tableName: 'Profiles'
           },
           key: 'id'
         },
@@ -34,6 +34,6 @@ module.exports = {
     })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('users')
+    return queryInterface.dropTable('Users')
   }
 }

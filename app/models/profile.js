@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING
   }, { 
     timestamps: false, 
-    tableName: 'profiles' 
+    // tableName: 'profiles' 
   })
   Profile.associate = (models) => {
-    // Profile.hasMany(models.User)
-    Profile.hasMany(models.User, { foreignKey: 'profile_id', as: 'users' })
+    Profile.hasMany(models.User)
+    // Profile.hasMany(models.User, { foreignKey: 'profile_id', as: 'Users' })
   }
   return Profile;
 }

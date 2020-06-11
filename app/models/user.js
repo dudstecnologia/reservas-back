@@ -8,10 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     profile_id: DataTypes.UUID
   }, { 
     timestamps: false, 
-    tableName: 'users' 
+    // tableName: 'users' 
   })
   User.associate = (models) => {
-    User.belongsTo(models.Profile, { foreignKey: 'id', as: 'profiles' })
+    User.belongsTo(models.Profile)
+    // User.belongsTo(models.Profile, { foreignKey: 'id', as: 'profiles' })
   }
   return User;
 }
