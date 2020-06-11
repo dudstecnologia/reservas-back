@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     // tableName: 'profiles' 
   })
   Profile.associate = (models) => {
-    Profile.hasMany(models.User)
+    // Profile.hasMany(models.User)
     // Profile.hasMany(models.User, { foreignKey: 'profile_id', as: 'Users' })
   }
   return Profile;
